@@ -11,3 +11,5 @@ app.use(cors());
 
 const CONNECTION_URL = 'mongodb + srv://memorias:memorias123@cluster0.kohzkj0.mongodb.net/?retryWrites=true&w=majority';
 const port = process.env.PORT || 5000;
+
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
