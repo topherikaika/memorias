@@ -11,9 +11,13 @@ export const getPosts = async (req, res) => {
 }
 
 export const createPost = (req, res) => {
-  try {
-    res.send('Post Creation');
-  } catch (error) {
+  const post = req.body;
+  const newPost = PostMessage(post);
 
+  try {
+    await newPost.save();
+    res.status(201).json(newPost);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
   }
 }
