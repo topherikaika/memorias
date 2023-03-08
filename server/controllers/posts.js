@@ -11,5 +11,9 @@ export const getPosts = async (req, res) => {
 }
 
 export const createPost = (req, res) => {
-  res.send('Post Creation');
+  try {
+    res.send('Post Creation');
+  } catch (error) {
+
+  }
 }
